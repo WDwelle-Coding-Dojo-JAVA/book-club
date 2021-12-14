@@ -18,11 +18,12 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<h1>Book Club</h1>
    <form:form action="/register" method="post" modelAttribute="newUser">
         <div class="form-group">
             <label>User Name:</label>
-            <form:input path="userName" class="form-control" />
-            <form:errors path="userName" class="text-danger" />
+            <form:input path="name" class="form-control" />
+            <form:errors path="name" class="text-danger" />
         </div>
         <div class="form-group">
             <label>Email:</label>
