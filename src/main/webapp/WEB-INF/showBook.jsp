@@ -19,24 +19,11 @@
 </head>
 <body>
    <div class="container mt-5">
-   	<h1>Book Club</h1>
-   	<h2>Welcome, ${name} </h2>
-   	<a href= "/logout">Logout</a>
-   	<a href= "/books/add">Add Book</a>
-		<table class="table table-striped">
-   			<tr>
-   				<th> Title </th>
-   				<th> Author </th>
-   				<th> Posted By </th>
-   			</tr>			
-			<c:forEach var="book" items="${book}"> 
-				<tr>
-					<td>${book.name }</td>
-					<td>${book.author} </td>
-					<td>${book.user_id.name}</td>
-				</tr>
-			</c:forEach>
-		</table>	
-	</div>
+	<h1> ${book.title }</h1>
+	<ul>
+		<li> Author: ${book.author.name }</li>
+		<li> Book description: ${book.description }</li>
+	</ul>
+    </div>
 </body>
 </html>

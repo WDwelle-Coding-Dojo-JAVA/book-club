@@ -39,10 +39,18 @@ public class Book {
     private Date updatedAt;
     
     @ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="user_id")
-	private User user;
+	@JoinColumn(name="author_id")
+	private User author;
     
     public Book() {}
+    
+    
+
+	public void setAuthor(User author) {
+		this.author = author;
+	}
+
+
 
 	public Long getId() {
 		return id;
@@ -60,13 +68,10 @@ public class Book {
 		this.title = title;
 	}
 
-	public String getAuthor() {
-		return Author;
+	public User getAuthor() {
+		return author;
 	}
 
-	public void setAuthor(String author) {
-		Author = author;
-	}
 
 	public String getDescription() {
 		return description;
@@ -92,13 +97,6 @@ public class Book {
 		this.updatedAt = updatedAt;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
     
     
 }

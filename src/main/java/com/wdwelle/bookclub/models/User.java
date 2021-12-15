@@ -45,8 +45,18 @@ public class User {
     private Date createdAt;
     private Date updatedAt;
     
-    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
-    private List<Book> books;
+    @OneToMany(mappedBy="author", fetch = FetchType.LAZY)
+    private List<Book> createdBooks;
+    
+    
+
+	public List<Book> getCreatedBooks() {
+		return createdBooks;
+	}
+
+	public void setCreatedBooks(List<Book> createdBooks) {
+		this.createdBooks = createdBooks;
+	}
 
 	public Long getId() {
 		return id;
@@ -105,11 +115,11 @@ public class User {
 	}
 
 	public List<Book> getBooks() {
-		return books;
+		return createdBooks;
 	}
 
 	public void setBooks(List<Book> books) {
-		this.books = books;
+		this.createdBooks = books;
 	}
     
     

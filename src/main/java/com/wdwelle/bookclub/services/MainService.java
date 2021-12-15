@@ -79,4 +79,23 @@ public class MainService {
 	public User saveUser(User user) {
 		return userRepo.save(user);
 	}
+	
+	//===Books===
+	
+	public Book editBook(Book book) {
+		return bookRepo.save(book);
+	}
+	
+	public Book findOneBook(Long id) {
+		Optional<Book> optionalBook = bookRepo.findById(id);
+		if(optionalBook.isPresent()) {
+			return optionalBook.get();
+		}else {
+			return null;
+		}
+	}
+	
+	public void deleteBook(Long id) {
+		bookRepo.deleteById(id);
+	}
 }
